@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-  <!-- Basic -->
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <!-- Mobile Metas -->
+
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <!-- Site Metas -->
+
   <meta name="keywords" content="" />
   <meta name="description" content="" />
   <meta name="author" content="" />
@@ -16,22 +14,15 @@
   <title>
     Giftos
   </title>
-
-  <!-- slider stylesheet -->
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
-
-  <!-- bootstrap core css -->
   <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
-
-  <!-- Custom styles for this template -->
   <link href="css/style.css" rel="stylesheet" />
-  <!-- responsive style -->
   <link href="css/responsive.css" rel="stylesheet" />
 </head>
 
 <body>
   <div class="hero_area">
-    <!-- header section strats -->
+ 
     <header class="header_section">
       <nav class="navbar navbar-expand-lg custom_nav-container ">
         <a class="navbar-brand" href="index.html">
@@ -77,8 +68,7 @@
         </div>
       </nav>
     </header>
-    <!-- end header section -->
-    <!-- slider section -->
+    <!-- slider  -->
 
     <section class="slider_section">
       <div class="slider_container">
@@ -162,11 +152,10 @@
       </div>
     </section>
 
-    <!-- end slider section -->
+    <!-- end slider  -->
   </div>
-  <!-- end hero area -->
 
-  <!-- shop section -->
+  <!-- shop  -->
 
     <section class="shop_section layout_padding">
     <div class="container">
@@ -397,9 +386,9 @@
 	 </div>
   </section>
 
-  <!-- end shop section -->
+  <!-- end shop  -->
 
-  <!-- saving section -->
+  <!-- saving  -->
 
   <section class="saving_section ">
     <div class="box">
@@ -436,9 +425,9 @@
     </div>
   </section>
 
-  <!-- end saving section -->
+  <!-- end saving s -->
 
-  <!-- why section -->
+  <!-- why  -->
 
   <section class="why_section layout_padding">
     <div class="container">
@@ -503,10 +492,10 @@
     </div>
   </section>
 
-  <!-- end why section -->
+  <!-- end why  -->
 
 
-  <!-- gift section -->
+  <!-- gift  -->
 
   <section class="gift_section layout_padding-bottom">
     <div class="box ">
@@ -546,10 +535,10 @@
   </section>
 
 
-  <!-- end gift section -->
+  <!-- end gift -->
 
 
-  <!-- contact section -->
+  <!-- contact  -->
 <section id="contact">
   <section class="contact_section ">
     <div class="container px-0">
@@ -594,9 +583,9 @@
   </section>
 
 
-  <!-- end contact section -->
+  <!-- end contact  -->
 
-  <!-- client section -->
+  <!-- client  -->
   <section id="testimonials">
   <section class="client_section layout_padding">
     <div class="container">
@@ -643,9 +632,9 @@
     </div>
   </section>
   	 </section>
-  <!-- end client section -->
+  <!-- end client  -->
 
-  <!-- info section -->
+  <!-- info  -->
 
   <section class="info_section  layout_padding2-top">
     <div class="social_container">
@@ -707,7 +696,7 @@
     </div>
   </div>
 </section>
-    <!-- footer section -->
+    <!-- footer  -->
     <footer class=" footer_section">
       <div class="container">
         <p>
@@ -716,11 +705,11 @@
         </p>
       </div>
     </footer>
-    <!-- footer section -->
+    <!-- footer  -->
 
   </section>
 
-  <!-- end info section -->
+  <!-- end info  -->
 
 
   <script src="js/jquery-3.4.1.min.js"></script>
@@ -728,10 +717,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
   </script>
   <script src="js/custom.js"></script>
-<!-- Coloque este script no final do seu arquivo HTML, antes do fechamento da tag </body> -->
 
 <script>
-  // Array de exemplo com produtos
   let produtos = [
     { id: 1, nome: 'Smartphone', categoria: 'Eletrônicos', preco: 1500 },
     { id: 2, nome: 'Camiseta', categoria: 'Moda', preco: 30 },
@@ -742,8 +729,6 @@
     { id: 7, nome: 'Cadeira', categoria: 'Casa e Jardim', preco: 300 },
     { id: 8, nome: 'Bola', categoria: 'Esportes', preco: 80 },
   ];
-
-  // Função para renderizar a lista de produtos na página
   function renderProducts(produtos) {
     const productList = document.getElementById('product-list');
     productList.innerHTML = '';
@@ -765,7 +750,7 @@
     });
   }
 
-  // Função para filtrar produtos por categoria
+
   function filterProductsByCategory(categoria) {
     if (categoria === 'Todos') {
       renderProducts(produtos);
@@ -775,7 +760,6 @@
     }
   }
 
-  // Função para ordenar produtos por preço
   function sortProductsByPrice(order) {
     let sortedProducts;
     if (order === 'asc') {
@@ -786,13 +770,11 @@
     renderProducts(sortedProducts);
   }
 
-  // Event listener para filtro de categoria
   document.getElementById('filterCategory').addEventListener('change', function () {
     const selectedCategory = this.value;
     filterProductsByCategory(selectedCategory);
   });
 
-  // Renderiza os produtos ao carregar a página
   window.onload = function () {
     renderProducts(produtos);
   };
@@ -801,9 +783,8 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
   
-  <!-- Script customizado para filtrar e ordenar produtos -->
   <script>
-    // Array de exemplo com produtos
+ 
     let produtos = [
       { id: 1, nome: 'Smartphone', categoria: 'Eletrônicos', preco: 1500 },
       { id: 2, nome: 'Camiseta', categoria: 'Moda', preco: 30 },
@@ -815,7 +796,6 @@
       { id: 8, nome: 'Bola', categoria: 'Esportes', preco: 80 },
     ];
 
-    // Função para renderizar a lista de produtos na página
     function renderProducts(produtos) {
       const productList = document.getElementById('product-list');
       productList.innerHTML = '';
@@ -847,7 +827,6 @@
       }
     }
 
-    // Função para ordenar produtos por preço
     function sortProductsByPrice(order) {
       let sortedProducts;
       if (order === 'asc') {
@@ -858,26 +837,24 @@
       renderProducts(sortedProducts);
     }
 
-    // Event listener para filtro de categoria
+
     document.getElementById('filterCategory').addEventListener('change', function () {
       const selectedCategory = this.value;
       filterProductsByCategory(selectedCategory);
     });
 
-    // Event listener para ordenação por preço
     document.getElementById('sortPrice').addEventListener('change', function () {
       const selectedOrder = this.value;
       sortProductsByPrice(selectedOrder);
     });
 
-    // Renderiza os produtos ao carregar a página
+    
     window.onload = function () {
       renderProducts(produtos);
     };
 	  document.getElementById('searchForm').addEventListener('submit', function(event) {
     event.preventDefault(); // Evita o envio do formulário
 
-    // Redireciona para a página desejada
     window.location.href = 'login.html'; // 
   });
   </script>
