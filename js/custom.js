@@ -27,51 +27,37 @@ $('.owl-carousel').owlCarousel({
         }
     }
 })
-// Aguarda o carregamento completo do documento
-document.addEventListener('DOMContentLoaded', function() {
-  // Seleciona o link de "Contato" no menu
-  const contactLink = document.getElementById('contact-link');
-    const testimonialsLink = document.getElementById('testimonials-link');
-	  const aboutUsLink = document.getElementById('about-us-link');
-  
-  
-  // Adiciona um evento de clique ao link de "Contato"
-  contactLink.addEventListener('click', function(event) {
-    event.preventDefault(); // Previne o comportamento padrão do link
-    
-    // Obtém a posição vertical da seção de contato
-    const contactSection = document.getElementById('contact');
-    const offsetTop = contactSection.offsetTop;
-    
-    // Faz a rolagem suave até a seção de contato
-    window.scrollTo({
-      top: offsetTop,
-      behavior: 'smooth'  // Comportamento suave da rolagem
+
+
+//
+$(document).ready(function() {
+    $("#subscribeForm").submit(function(event) {
+        event.preventDefault(); // Evita o envio padrão do formulário
+
+        var email = $("#emailInput").val(); // Obtém o valor do campo de e-mail
+
+        // Mostra a roda de carregamento ao lado do campo de e-mail
+        $("#loadingSpinner").removeClass("d-none");
+
+        // Simula um tempo de espera (para propósitos de demonstração)
+        setTimeout(function() {
+            // Oculta a roda de carregamento após o tempo de espera
+            $("#loadingSpinner").addClass("d-none");
+
+            // Exibe a mensagem de sucesso
+            $("#successMessage").removeClass("d-none");
+
+            // Limpa o campo de e-mail
+            $("#emailInput").val("");
+
+            // Oculta a mensagem de sucesso após alguns segundos
+            setTimeout(function() {
+                $("#successMessage").addClass("d-none");
+            }, 3000); // 3000 milissegundos = 3 segundos
+        }, 2000); // 2000 milissegundos = 2 segundos (tempo simulado de envio)
     });
-  });
 });
-document.getElementById('subscribeForm').addEventListener('submit', function(event) {
-  event.preventDefault(); // Previne o envio do formulário
-  
-  const emailInput = document.getElementById('emailInput');
-  const email = emailInput.value.trim();
-  
-  // Expressão regular para validar o formato do e-mail
-  const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  
-  // Valida o e-mail
-  if (regex.test(email)) {
-    
-    document.getElementById('error-message').textContent = '';
-    emailInput.classList.remove('invalid');
-    
-    // Simulando envio do formulário
-    alert(`E-mail '${email}' válido. Formulário enviado!`);
-    // Aqui você pode enviar o formulário para o backend ou outra ação necessária
-  } else {
-    // E-mail inválido, exibe mensagem de erro
-    document.getElementById('error-message').textContent = 'Por favor, insira um e-mail válido.';
-    emailInput.classList.add('invalid');
-  }
-});
+
+
+
 
