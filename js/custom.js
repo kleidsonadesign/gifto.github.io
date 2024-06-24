@@ -81,7 +81,7 @@ document.getElementById('subscriptionForm').addEventListener('submit', function(
     var loading = document.getElementById('loading');
 
     // Mostrar a animação de carregamento
-    loading.style.display = 'block';
+    loading.style.display = 'inline-block';
 
     // Simular um delay de 2 segundos (2000 milissegundos)
     setTimeout(function() {
@@ -91,7 +91,9 @@ document.getElementById('subscriptionForm').addEventListener('submit', function(
         // Mostrar a caixa de alerta
         alert('Obrigado por se inscrever, ' + email + '!');
 
-        // Resetar o formulário
-        document.getElementById('subscriptionForm').reset();
+        // Redirecionar para outra página
+        window.location.href = 'pagina_destino.html'; // Substitua 'pagina_destino.html' pelo URL desejado
     }, 2000);
+});
+
 });
