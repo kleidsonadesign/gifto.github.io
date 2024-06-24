@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html>
+
 <head>
+  <!-- Basic -->
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-
+  <!-- Mobile Metas -->
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-
+  <!-- Site Metas -->
   <meta name="keywords" content="" />
   <meta name="description" content="" />
   <meta name="author" content="" />
@@ -14,15 +16,27 @@
   <title>
     Giftos
   </title>
+
+  <!-- slider stylesheet -->
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+
+  <!-- bootstrap core css -->
   <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+
+  <!-- Custom styles  -->
   <link href="css/style.css" rel="stylesheet" />
+  <!-- responsive style -->
   <link href="css/responsive.css" rel="stylesheet" />
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="path/to/owl.carousel.min.js"></script>
+<script src="path/to/custom.js"></script>
+
 </head>
 
 <body>
   <div class="hero_area">
- 
+    <!-- header section strats -->
     <header class="header_section">
       <nav class="navbar navbar-expand-lg custom_nav-container ">
         <a class="navbar-brand" href="index.html">
@@ -68,7 +82,8 @@
         </div>
       </nav>
     </header>
-    <!-- slider  -->
+    <!-- end header section -->
+    <!-- slider section -->
 
     <section class="slider_section">
       <div class="slider_container">
@@ -93,7 +108,7 @@
                   </div>
                   <div class="col-md-5 ">
                     <div class="img-box">
-                      <img src="images/slider-img2.png" alt="" />
+                      <img src="images/slider-img.png" alt="" />
                     </div>
                   </div>
                 </div>
@@ -152,10 +167,11 @@
       </div>
     </section>
 
-    <!-- end slider  -->
+    <!-- end slider section -->
   </div>
+  <!-- end hero area -->
 
-  <!-- shop  -->
+  <!-- shop section -->
 
     <section class="shop_section layout_padding">
     <div class="container">
@@ -386,9 +402,9 @@
 	 </div>
   </section>
 
-  <!-- end shop  -->
+  <!-- end shop section -->
 
-  <!-- saving  -->
+  <!-- saving section -->
 
   <section class="saving_section ">
     <div class="box">
@@ -425,9 +441,9 @@
     </div>
   </section>
 
-  <!-- end saving s -->
+  <!-- end saving section -->
 
-  <!-- why  -->
+  <!-- why section -->
 
   <section class="why_section layout_padding">
     <div class="container">
@@ -492,10 +508,10 @@
     </div>
   </section>
 
-  <!-- end why  -->
+  <!-- end why section -->
 
 
-  <!-- gift  -->
+  <!-- gift section -->
 
   <section class="gift_section layout_padding-bottom">
     <div class="box ">
@@ -535,10 +551,10 @@
   </section>
 
 
-  <!-- end gift -->
+  <!-- end gift section -->
 
 
-  <!-- contact  -->
+  <!-- contact section -->
 <section id="contact">
   <section class="contact_section ">
     <div class="container px-0">
@@ -583,9 +599,9 @@
   </section>
 
 
-  <!-- end contact  -->
+  <!-- end contact section -->
 
-  <!-- client  -->
+  <!-- client section -->
   <section id="testimonials">
   <section class="client_section layout_padding">
     <div class="container">
@@ -632,9 +648,9 @@
     </div>
   </section>
   	 </section>
-  <!-- end client  -->
+  <!-- end client section -->
 
-  <!-- info  -->
+  <!-- info section -->
 
   <section class="info_section  layout_padding2-top">
     <div class="social_container">
@@ -661,16 +677,23 @@
           <h6>Sobre nós</h6>
           <p>Ainda não temos uma história definida, mas estamos crescendo a cada dia.</p>
         </div>
+
         <div class="col-md-6 col-lg-3">
-         <div class="container">
-        <h2>Se inscreva para promoções</h2>
-        <form id="subscriptionForm">
-            <input type="email" id="email" placeholder="Digite seu email" required>
-            <button type="submit">Inscrever-se</button>
-        </form>
-        <div id="loading" class="loading" style="display: none;">Carregando...</div>
-    </div>
-    <script src="script.js"></script>
+          <div class="info_form">
+              <h5>Se inscreva para promoções</h5>
+              <form id="subscribeForm" action="#">
+                  <input type="email" id="emailInput" placeholder="Digite seu e-mail" required>
+                  <button type="submit">Se inscreva</button>
+              </form>
+              <div id="loadingSpinner" class="spinner-border text-primary d-none" role="status">
+                  <span class="sr-only">Carregando...</span>
+              </div>
+              <p id="successMessage" class="text-success d-none">Inscrição realizada com sucesso!</p>
+              <p id="errorMessage" class="text-danger d-none">Erro ao enviar inscrição. Por favor, tente novamente.</p>
+          </div>
+      </div>
+
+      
         <div class="col-md-6 col-lg-3">
           <h6>Precisa de ajuda?</h6>
           <p>Entre em contato via e-mail.</p>
@@ -696,7 +719,7 @@
     </div>
   </div>
 </section>
-    <!-- footer  -->
+    <!-- footer section -->
     <footer class=" footer_section">
       <div class="container">
         <p>
@@ -705,11 +728,11 @@
         </p>
       </div>
     </footer>
-    <!-- footer  -->
+    <!-- footer section -->
 
   </section>
 
-  <!-- end info  -->
+  <!-- end info section -->
 
 
   <script src="js/jquery-3.4.1.min.js"></script>
@@ -717,8 +740,10 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
   </script>
   <script src="js/custom.js"></script>
+<!-- Coloque este script no final do seu arquivo HTML, antes do fechamento da tag </body> -->
 
 <script>
+  // Array de exemplo com produtos
   let produtos = [
     { id: 1, nome: 'Smartphone', categoria: 'Eletrônicos', preco: 1500 },
     { id: 2, nome: 'Camiseta', categoria: 'Moda', preco: 30 },
@@ -729,6 +754,8 @@
     { id: 7, nome: 'Cadeira', categoria: 'Casa e Jardim', preco: 300 },
     { id: 8, nome: 'Bola', categoria: 'Esportes', preco: 80 },
   ];
+
+  // Função para renderizar a lista de produtos na página
   function renderProducts(produtos) {
     const productList = document.getElementById('product-list');
     productList.innerHTML = '';
@@ -750,7 +777,7 @@
     });
   }
 
-
+  // Função para filtrar produtos por categoria
   function filterProductsByCategory(categoria) {
     if (categoria === 'Todos') {
       renderProducts(produtos);
@@ -760,6 +787,7 @@
     }
   }
 
+  // Função para ordenar produtos por preço
   function sortProductsByPrice(order) {
     let sortedProducts;
     if (order === 'asc') {
@@ -770,11 +798,13 @@
     renderProducts(sortedProducts);
   }
 
+  // Event listener para filtro de categoria
   document.getElementById('filterCategory').addEventListener('change', function () {
     const selectedCategory = this.value;
     filterProductsByCategory(selectedCategory);
   });
 
+  // Renderiza os produtos ao carregar a página
   window.onload = function () {
     renderProducts(produtos);
   };
@@ -783,8 +813,9 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
   
+  <!-- Script customizado para filtrar e ordenar produtos -->
   <script>
- 
+    // Array de exemplo com produtos
     let produtos = [
       { id: 1, nome: 'Smartphone', categoria: 'Eletrônicos', preco: 1500 },
       { id: 2, nome: 'Camiseta', categoria: 'Moda', preco: 30 },
@@ -796,6 +827,7 @@
       { id: 8, nome: 'Bola', categoria: 'Esportes', preco: 80 },
     ];
 
+    // Função para renderizar a lista de produtos na página
     function renderProducts(produtos) {
       const productList = document.getElementById('product-list');
       productList.innerHTML = '';
@@ -827,6 +859,7 @@
       }
     }
 
+    // Função para ordenar produtos por preço
     function sortProductsByPrice(order) {
       let sortedProducts;
       if (order === 'asc') {
@@ -837,24 +870,26 @@
       renderProducts(sortedProducts);
     }
 
-
+    // Event listener para filtro de categoria
     document.getElementById('filterCategory').addEventListener('change', function () {
       const selectedCategory = this.value;
       filterProductsByCategory(selectedCategory);
     });
 
+    // Event listener para ordenação por preço
     document.getElementById('sortPrice').addEventListener('change', function () {
       const selectedOrder = this.value;
       sortProductsByPrice(selectedOrder);
     });
 
-    
+    // Renderiza os produtos ao carregar a página
     window.onload = function () {
       renderProducts(produtos);
     };
 	  document.getElementById('searchForm').addEventListener('submit', function(event) {
     event.preventDefault(); // Evita o envio do formulário
 
+    // Redireciona para a página desejada
     window.location.href = 'login.html'; // 
   });
   </script>
