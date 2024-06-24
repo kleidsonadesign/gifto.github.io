@@ -59,5 +59,44 @@ $(document).ready(function() {
 });
 
 
+// Exemplo de array simulando o carrinho
+var carrinho = [];
+
+// Função para calcular e exibir os itens do carrinho
+function mostrarCarrinho() {
+    var listaCarrinho = document.getElementById('lista-carrinho');
+    listaCarrinho.innerHTML = '';
+
+    var total = 0;
+
+    carrinho.forEach(function(item) {
+        var li = document.createElement('li');
+        li.textContent = `${item.nome} - R$ ${item.preco.toFixed(2)}`;
+
+        listaCarrinho.appendChild(li);
+
+        total += item.preco;
+    });
+
+    var totalValor = document.getElementById('total-valor');
+    totalValor.textContent = total.toFixed(2);
+}
+
+// Exemplo de função para adicionar item ao carrinho
+function adicionarAoCarrinho(item) {
+    carrinho.push(item);
+    mostrarCarrinho();
+}
+
+// Exemplo de uso: Adicionando um item ao carrinho ao clicar em algum botão
+document.getElementById('botao-adicionar').addEventListener('click', function() {
+    var item = {
+        id: 1,
+        nome: 'Produto 1',
+        preco: 10.99,
+        quantidade: 1
+    };
+    adicionarAoCarrinho(item);
+});
 
 
