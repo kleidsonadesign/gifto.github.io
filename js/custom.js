@@ -74,3 +74,24 @@ document.getElementById('subscribeForm').addEventListener('submit', function(eve
     emailInput.classList.add('invalid');
   }
 });
+document.getElementById('subscriptionForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    var email = document.getElementById('email').value;
+    var loading = document.getElementById('loading');
+
+    // Mostrar a animação de carregamento
+    loading.style.display = 'block';
+
+    // Simular um delay de 2 segundos (2000 milissegundos)
+    setTimeout(function() {
+        // Ocultar a animação de carregamento
+        loading.style.display = 'none';
+
+        // Mostrar a caixa de alerta
+        alert('Obrigado por se inscrever, ' + email + '!');
+
+        // Resetar o formulário
+        document.getElementById('subscriptionForm').reset();
+    }, 2000);
+});
