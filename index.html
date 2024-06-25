@@ -891,6 +891,101 @@
     // Redireciona para a página desejada
     window.location.href = 'login.html'; // 
   });
+
+	  // Módulo de Produtos (products.js)
+const productsModule = (function() {
+  let products = []; // Array simulando dados de produtos
+
+  // Função para filtrar produtos por categoria
+  function filterProductsByCategory(array, categoria) {
+    return array.filter(product => product.category === categoria);
+  }
+
+  // Função para ordenar produtos por preço
+  function sortProductsByPrice(array, order) {
+    if (order === 'asc') {
+      return array.slice().sort((a, b) => a.price - b.price);
+    } else if (order === 'desc') {
+      return array.slice().sort((a, b) => b.price - a.price);
+    } else {
+      return array; // Ordenação padrão, sem alteração
+    }
+  }
+
+  // Função para simular obtenção de produtos do servidor (assíncrona)
+  async function fetchProductsFromServer(url) {
+    try {
+      let response = await fetch(url);
+      if (!response.ok) {
+        throw new Error('Erro ao obter produtos do servidor');
+      }
+      let data = await response.json();
+      products = data; // Atualiza a lista de produtos
+      return products;
+    } catch (error) {
+      console.error('Erro:', error.message);
+    }
+  }
+
+  return {
+    filterProductsByCategory,
+    sortProductsByPrice,
+    fetchProductsFromServer,
+    get products() {
+      return products;
+    }
+  };
+})();
+
+// Funções Utilitárias (utils.js)
+const utilsModule = (function() {
+  // Função para formatar preço em string formatada
+  function formatPrice(price) {
+    return `$${price.toFixed(2)}`;
+  }
+
+  // Função para buscar produto por nome
+  function searchProductByName(products, searchTerm) {
+    searchTerm = searchTerm.toLowerCase();
+    return products.filter(product => product.name.toLowerCase().includes(searchTerm));
+  }
+
+  return {
+    formatPrice,
+    searchProductByName
+  };
+})();
+
+// Uso dos módulos em um arquivo principal (app.js)
+document.addEventListener('DOMContentLoaded', async function() {
+  const { filterProductsByCategory, sortProductsByPrice, fetchProductsFromServer, products } = productsModule;
+  const { formatPrice, searchProductByName } = utilsModule;
+
+  // Exemplo de uso dos módulos e funções
+  await fetchProductsFromServer('https://api.example.com/products');
+  console.log('Produtos carregados:', products);
+
+  let electronicsProducts = filterProductsByCategory(products, 'Electronics');
+  console.log('Produtos de Eletrônicos:', electronicsProducts);
+
+  let sortedProducts = sortProductsByPrice(products, 'asc');
+  console.log('Produtos ordenados por preço crescente:', sortedProducts);
+
+  let formattedPrice = formatPrice(29.99);
+  console.log('Preço formatado:', formattedPrice);
+
+  let searchTerm = 'phone';
+  let searchResults = searchProductByName(products, searchTerm);
+  console.log(`Resultados da busca por "${searchTerm}":`, searchResults);
+
+  // Exemplo de adicionar evento (simulado) para adicionar ao carrinho
+  const addToCartButton = document.getElementById('addToCartButton');
+  addToCartButton.addEventListener('click', function() {
+    console.log('Produto adicionado ao carrinho');
+    // Implementar lógica real de adicionar ao carrinho aqui
+  });
+});
+
   </script>
 	<script src="js/app.js"></script>
 </body>
